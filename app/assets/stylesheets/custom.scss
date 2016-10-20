@@ -1,0 +1,38 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+$wrapper-width: 1250px;
+$wrapper-margin: 0 auto;
+
+.title{
+  color: red;
+  font-size: 1.5em;
+}
+body {
+  padding-top: 5em;
+  padding-bottom: 6em;
+  .wrapper {
+    max-width: $wrapper-width;
+    margin: $wrapper-margin
+  }
+  .nav{
+    height: 5em;
+  }
+  .side-nav{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+  }
+  .footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 5em;
+    background-color: black;
+    .footer-text{
+      color: white;
+      margin: 20px 0;
+    }
+  }
+}
