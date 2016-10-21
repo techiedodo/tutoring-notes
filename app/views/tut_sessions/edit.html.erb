@@ -1,0 +1,8 @@
+<h1>Edit Session</h1>
+<%= form_for @tsession do |s| %>
+<%= s.label :session_name %>
+<%= s.text_field :session_name %>
+
+<%= s.submit "Save" %>
+<% end %>
+<%= link_to "Cancel", tut_sessions_path %>

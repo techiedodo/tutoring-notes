@@ -10,4 +10,5 @@
 #
 
 class Student < ApplicationRecord
+  has_many :tut_sessions
 end

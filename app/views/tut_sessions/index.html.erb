@@ -1,0 +1,7 @@
+<h1>Session List</h1>
+<% @tsessions.each do |session| %>
+<p>Session:
+  <%= link_to session.session_name, tut_session_path(session)%></p>
+<p>Student:<%= link_to Student.find(session.student_id).name, student_path(session.student_id)%>
+  <%= link_to "Add Session", new_tut_session_path(:student_id => session.student_id)%></p>
+<%end%>

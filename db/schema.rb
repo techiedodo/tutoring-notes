@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161020060353) do
+ActiveRecord::Schema.define(version: 20161020202143) do
 
   create_table "students", force: :cascade do |t|
     t.string   "name"
     t.text     "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tut_sessions", force: :cascade do |t|
+    t.text     "session_name"
+    t.integer  "student_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["student_id"], name: "index_tut_sessions_on_student_id"
   end
 
 end

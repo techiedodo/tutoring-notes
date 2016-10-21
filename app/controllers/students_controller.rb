@@ -17,7 +17,7 @@ class StudentsController < ApplicationController
       flash[:notice] = "New student added successfully."
       redirect_to @student
     else
-      flash[:error] = "There was an error creating new student. Please try again."
+      flash.now[:error] = "There was an error creating a new student. Please try again."
       render :new
     end
   end
@@ -32,7 +32,7 @@ class StudentsController < ApplicationController
       flash[:notice] = "Student file updated."
       redirect_to @student
     else
-      flash[:error] = "There was an error updating student. Please try again."
+      flash.now[:error] = "There was an error updating student. Please try again."
       render :new
     end
   end
