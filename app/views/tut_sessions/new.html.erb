@@ -1,22 +1,2 @@
 <h1>New Session</h1>
-<%= form_for @tsession do |s| %>
-<% if @tsession.errors.any? %>
-<div class="alert alert-danger">
-  <h4>There are
-    <%= pluralize(@tsession.errors.count, "error") %>.</h4>
-  <ul>
-    <% @tsession.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
-<%= s.hidden_field :student_id, :value => @student.id %>
-<%= s.label :session_name %>
-<%= s.text_field :session_name %>
-
-<%= s.submit "Save" %>
-<% end %>
-<%= link_to "Cancel", tut_sessions_path %>
-<br>
-<%= params.inspect %>
+<%= render 'form' %>

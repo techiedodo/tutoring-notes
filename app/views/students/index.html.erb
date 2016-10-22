@@ -1,5 +1,23 @@
-<h1>List of Students</h1>
-<%= link_to "Add Student", new_student_path, class: "btn btn-xs btn-primary" %>
-<% @students.each do |student| %>
-<p><%= link_to student.name, student_path(student)%></p>
-<%end%>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h1>
+      List of Students
+      <%= link_to "Add Student", new_student_path, class: "btn btn-xs btn-info" %>
+    </h1>
+  </div>
+  <div class="panel-body">
+    <p class="text-justify">Once you have been assigned a student, create a student profile in this section. A biography can be added to the profile. If you need help creating a student biography, please contact us at Valley Prep.</p>
+  </div>
+  <!-- List Group -->
+  <ul class="list-group">
+    <% @students.each do |student| %>
+    <li class="list-group-item">
+      <%= link_to student.name, student_path(student)%>
+      <span class="links"><%= link_to "Edit Student", edit_student_path(student)%>
+        |
+        <%= link_to "Add Session", new_tut_session_path(:student_id => student)%>
+      </span>
+    </li>
+    <%end%>
+  </ul>
+</div>

@@ -1,11 +1,2 @@
 <h1>New Student</h1>
-<%= form_for @student do |s| %>
-<%= s.label :name %>
-<%= s.text_field :name %>
-
-<%= s.label :bio %>
-<%= s.text_area :bio %>
-
-<%= s.submit "Save" %>
-<% end %>
-<%= link_to "Cancel", students_path %>
+<%= render 'form' %>

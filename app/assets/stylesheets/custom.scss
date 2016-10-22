@@ -7,6 +7,11 @@ $wrapper-margin: 0 auto;
   color: red;
   font-size: 1.5em;
 }
+.links{
+  font-size: .7em;
+  color: blue;
+  padding: 0 .75em;
+}
 body {
   padding-top: 5em;
   padding-bottom: 6em;
@@ -33,6 +38,16 @@ body {
     .footer-text{
       color: white;
       margin: 20px 0;
+    }
+  }
+  .container{
+    .panel{
+      margin-top: 2.25em;
+      max-width: 80vw;
+      margin: 2.75em auto;
+      .panel-body{
+        font-size: 1.25em;
+      }
     }
   }
 }
