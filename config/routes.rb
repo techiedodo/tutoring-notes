@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :tutors
   root 'home#index'
   resources :students
   resources :tut_sessions
