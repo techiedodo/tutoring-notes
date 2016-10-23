@@ -1,6 +1,7 @@
 <h1>Session</h1>
 <div class="btn-group">
   <%=link_to "Edit", edit_tut_session_path(@tsession), class: "btn btn-info btn-xs", type: "button"%>
+  <%=link_to "Student", student_path(@tsession.student), class: "btn btn-primary btn-xs", type: "button"%>
   <%=link_to "Session List", tut_sessions_path, class: "btn btn-primary btn-xs", type: "button"%>
   <%=link_to "Delete", "#", class: "btn btn-danger btn-xs", type: "button"%>
 </div>

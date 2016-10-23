@@ -1,14 +1,31 @@
-<h1>Student</h1>
-<div class="btn-group">
-  <%=link_to "Edit", edit_student_path(@student), class: "btn btn-info btn-xs", type: "button"%>
-  <%=link_to "Student List", students_path, class: "btn btn-primary btn-xs", type: "button"%>
-  <%=link_to "Delete", "#", class: "btn btn-danger btn-xs", type: "button"%>
-</div>
-<div>
-  <span class="title">Name:</span>
-  <p><%=@student.name%></p>
-</div>
-<div>
-  <span class="title">Biography:</span>
-  <p class="text-justified"><%=@student.bio%></p>
+<div class="row center">
+  <div class="col-md-5 col-sm-5">
+    <h2>Student</h2>
+    <div class="btn-group">
+      <%=link_to "Edit", edit_student_path(@student), class: "btn btn-info btn-xs", type: "button"%>
+      <%=link_to "Student List", students_path, class: "btn btn-primary btn-xs", type: "button"%>
+      <%=link_to "Delete", "#", class: "btn btn-danger btn-xs", type: "button"%>
+    </div>
+    <div>
+      <span class="title">Name:</span>
+      <p><%=@student.name%></p>
+    </div>
+    <div>
+      <span class="title">Biography:</span>
+      <p class="text-justify"><%=@student.bio%></p>
+    </div>
+  </div>
+  <div class="col-md-7 col-sm-7">
+    <h2>Session Notes
+      <%= link_to "New Session",  new_tut_session_path(:student_id => @student), class: "btn btn-xs btn-primary" %></h2>
+    <ul class="list-group">
+      <% @student.tut_sessions.all.each do |session| %>
+      <li class="list-group-item">
+        <%= link_to session.session_name, tut_session_path(session) %>
+        <br>
+        Note Count
+      </li>
+      <% end %>
+    </ul>
+  </div>
 </div>

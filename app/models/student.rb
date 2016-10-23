@@ -10,5 +10,8 @@
 #
 
 class Student < ApplicationRecord
-  has_many :tut_sessions
+  validates :name, presence: true
+  has_many :tut_sessions, dependent: :destroy
+
+  default_scope { order('students.name ASC')}
 end

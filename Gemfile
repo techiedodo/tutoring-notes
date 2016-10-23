@@ -4,6 +4,7 @@ gem 'annotate', '~> 2.7', '>= 2.7.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'faker', '~> 1.6', '>= 1.6.5'
 gem 'devise'
+gem 'figaro', '1.0'
 
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use Puma as the app server
