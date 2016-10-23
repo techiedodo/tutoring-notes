@@ -13,6 +13,7 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(student_params)
+    @student.tutor = current_tutor
     if @student.save
       flash[:notice] = "New student added successfully."
       redirect_to @student
