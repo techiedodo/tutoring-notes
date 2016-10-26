@@ -1,19 +1,22 @@
 class StudentsController < ApplicationController
   def index
-    @students = Student.all
+    @students = policy_scope(Student)
   end
 
   def show
     @student = Student.find(params[:id])
+    authorize @student
   end
 
   def new
     @student = Student.new
+    authorize @student
   end
 
   def create
     @student = Student.new(student_params)
     @student.tutor = current_tutor
+    authorize @student
     if @student.save
       flash[:notice] = "New student added successfully."
       redirect_to @student
@@ -25,10 +28,12 @@ class StudentsController < ApplicationController
 
   def edit
     @student = Student.find(params[:id])
+    authorize @student
   end
 
   def update
     @student = Student.find(params[:id])
+    authorize @student
     if @student.update_attributes(student_params)
       flash[:notice] = "Student file updated."
       redirect_to @student

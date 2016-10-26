@@ -29,5 +29,12 @@ class Tutor < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
+  def tutor?
+    role == 'tutor'
+  end
+  def guest?
+    role == 'guest'
+  end
+  
   has_many :students
 end
