@@ -1,6 +1,6 @@
 class TutSessionsController < ApplicationController
   def index
-    @tsessions = TutSession.all
+    @tsessions = current_tutor.tut_sessions
   end
 
   def show

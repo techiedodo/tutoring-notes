@@ -35,6 +35,7 @@ class Tutor < ApplicationRecord
   def guest?
     role == 'guest'
   end
-  
-  has_many :students
+
+  has_many :students, dependent: :destroy
+  has_many :tut_sessions, :through => :students
 end
