@@ -6,6 +6,8 @@ gem 'faker', '~> 1.6', '>= 1.6.5'
 gem 'devise'
 gem 'figaro', '1.0'
 gem 'pundit'
+gem 'will_paginate', '~> 3.1', '>= 3.1.5'
+gem 'will_paginate-bootstrap'
 
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use Puma as the app server

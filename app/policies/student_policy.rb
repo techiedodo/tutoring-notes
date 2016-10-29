@@ -4,4 +4,7 @@ class StudentPolicy < ApplicationPolicy
       scope.where(tutor_id: user)
     end
   end
+  def index?
+    true
+  end
 end
