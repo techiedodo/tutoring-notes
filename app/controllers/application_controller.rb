@@ -7,9 +7,9 @@ class ApplicationController < ActionController::Base
   rescue_from Pundit::NotAuthorizedError do |exception|
     redirect_to root_url, alert: exception.message
   end
-  rescue_from NoMethodError do
-    redirect_to root_url, alert: 'Please login to continue.'
-  end
+  # rescue_from NoMethodError do
+  #   redirect_to root_url, alert: 'Please login to continue.'
+  # end
   # this will allow the use of current_tutor when using Pundit. Application Policy remains unchanged and user is still used.
   def pundit_user
     current_tutor

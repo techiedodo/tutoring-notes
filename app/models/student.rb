@@ -13,6 +13,7 @@
 class Student < ApplicationRecord
   validates :name, presence: true
   has_many :tut_sessions, dependent: :destroy
+  has_many :notes, :through => :tut_sessions
   belongs_to :tutor
 
   default_scope { order('students.name ASC')}

@@ -7,6 +7,7 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
+    @stu_sess = @student.tut_sessions.paginate(page: params[:page], per_page: 8)
     authorize @student
   end
 

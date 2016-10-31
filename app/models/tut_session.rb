@@ -12,6 +12,7 @@
 class TutSession < ApplicationRecord
   validates :session_name, presence: true
   belongs_to :student
+  has_many :notes, dependent: :destroy
 
   default_scope { order('created_at Desc')}
 end

@@ -19,13 +19,17 @@
     <h2>Session Notes
       <%= link_to "New Session",  new_tut_session_path(:student_id => @student), class: "btn btn-xs btn-primary" %></h2>
     <ul class="list-group">
-      <% @student.tut_sessions.all.each do |session| %>
+      <% @stu_sess.each do |session| %>
       <li class="list-group-item">
         <%= link_to session.session_name, tut_session_path(session) %>
         <br>
         Note Count
+        <%= session.notes.count %>
       </li>
       <% end %>
     </ul>
+    <div class="page-numbs">
+      <%= will_paginate @stu_sess, renderer: BootstrapPagination::Rails%>
+    </div>
   </div>
 </div>

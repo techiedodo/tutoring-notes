@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161026054229) do
+ActiveRecord::Schema.define(version: 20161029192018) do
+
+  create_table "notes", force: :cascade do |t|
+    t.text     "summary"
+    t.text     "achievement"
+    t.text     "next_sess"
+    t.text     "recommendation"
+    t.integer  "trip_dist"
+    t.integer  "rate"
+    t.string   "add_rate"
+    t.time     "t_start"
+    t.time     "t_finish"
+    t.date     "sess_date"
+    t.integer  "tut_session_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["tut_session_id"], name: "index_notes_on_tut_session_id"
+  end
 
   create_table "students", force: :cascade do |t|
     t.string   "name"

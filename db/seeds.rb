@@ -30,6 +30,25 @@ student = Student.all
     session_name: Faker::Company.duns_number
   )
 end
+tutoring = TutSession.all
+
+#Create Notes
+500.times do
+  Note.create!(
+  tut_session: tutoring.sample,
+  summary: Faker::Hipster.paragraph,
+  achievement: Faker::Hipster.paragraph,
+  next_sess: Faker::Hipster.paragraph,
+  recommendation: Faker::Hipster.paragraph,
+  trip_dist: Faker::Number.between(1, 20),
+  rate: Faker::Number.between(45, 55),
+  add_rate: Faker::Number.between(1, 5),
+  t_start: Faker::Time.backward(1, :morning),
+  t_finish: Faker::Time.forward(1, :morning),
+  sess_date: Faker::Time.between(DateTime.now - 3, DateTime.now)
+  )
+end
+
 
 tutor = Tutor.first
 tutor.skip_reconfirmation!
@@ -43,3 +62,4 @@ puts "Seed Finished"
 puts "#{Tutor.count} tutors created"
 puts "#{Student.count} students created"
 puts "#{TutSession.count} sessions created"
+puts "#{Note.count} notes created"
