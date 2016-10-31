@@ -50,6 +50,17 @@ body {
       margin: 20px 0;
     }
   }
+  .note-heading{
+    font-size: 1.3em;
+  }
+  .note-link{
+    font-size: .85em;
+    color: rgb(201, 45, 45);
+    &:hover{
+      color: rgb(134, 30, 30);
+      text-decoration: none;
+    }
+  }
   .container{
     .panel{
       margin-top: 2.25em;
