@@ -4,7 +4,7 @@
     <div class="btn-group">
       <%=link_to "Edit", edit_student_path(@student), class: "btn btn-info btn-xs", type: "button"%>
       <%=link_to "Student List", students_path, class: "btn btn-primary btn-xs", type: "button"%>
-      <%=link_to "Delete", "#", class: "btn btn-danger btn-xs", type: "button"%>
+      <%=link_to "Delete", @student, method: :delete, class: "btn btn-danger btn-xs", type: "button", data: {confirm: 'Are you sure that you want to remove this student?'}%>
     </div>
     <div>
       <span class="title">Name:</span>

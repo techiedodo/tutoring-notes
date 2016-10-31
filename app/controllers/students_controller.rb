@@ -46,6 +46,18 @@ class StudentsController < ApplicationController
     end
   end
 
+  def destroy
+    @student = Student.find(params[:id])
+    authorize @student
+    if @student.destroy
+      flash[:notice] = "\"#{@student.name}\" was removed successfully."
+      redirect_to students_path
+    else
+      flash[:error] = "There was a mistake removing the student. Please try again."
+      render :show
+    end
+  end
+
   private
     def student_params
       params.require(:student).permit(:name, :bio)
