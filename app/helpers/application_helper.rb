@@ -6,4 +6,7 @@ module ApplicationHelper
        content_tag :div, capture(&block), class: 'form-group'
      end
   end
+  def active_class(link_path)
+    current_page?(link_path) ? 'active' : ""
+  end
 end
