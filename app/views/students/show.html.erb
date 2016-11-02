@@ -2,7 +2,7 @@
   <div class="col-md-6 col-sm-6">
     <h2>Student</h2>
     <div class="btn-group">
-      <%=link_to "Edit", edit_student_path(@student), class: "btn btn-info btn-xs", type: "button"%>
+      <%=link_to "Edit", edit_student_path(@student), class: "btn btn-info btn-xs", type: "button" %>
       <%=link_to "Student List", students_path, class: "btn btn-primary btn-xs", type: "button"%>
       <%=link_to "Delete", @student, method: :delete, class: "btn btn-danger btn-xs", type: "button", data: {confirm: 'Are you sure that you want to remove this student?'}%>
     </div>
@@ -12,7 +12,7 @@
     </div>
     <div>
       <span class="title">Biography:</span>
-      <p class="text-justify"><%=@student.bio%></p>
+      <p class="text-justify"><%=@student.bio.html_safe%></p>
     </div>
   </div>
   <div class="col-md-6 col-sm-6">

@@ -13,7 +13,7 @@
     <% @students.each do |student| %>
     <li class="list-group-item">
       <%= link_to student.name, student_path(student)%>
-      <span class="links"><%= link_to "Edit Student", edit_student_path(student)%>
+      <span class="links"><%= link_to "Edit Student", edit_student_path(student) %>
         |
         <%= link_to "Add Session", new_tut_session_path(:student_id => student)%>
       </span>
